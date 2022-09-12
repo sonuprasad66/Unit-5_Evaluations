@@ -7,7 +7,7 @@ const login = (payload) => (dispatch) => {
   return axios
     .post(`https://reqres.in/api/login`, payload)
     .then((res) => {
-      dispatch({type: types.LOGIN_SUCCESS, payload: res.data.token});
+      return dispatch({type: types.LOGIN_SUCCESS, payload: res.data.token});
     })
     .catch((e) => {
       dispatch({type: types.LOGIN_FAILURE, payload: e});
